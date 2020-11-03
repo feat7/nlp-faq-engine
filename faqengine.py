@@ -15,6 +15,9 @@ class FAQEngine:
         self.model = self.build_model()
 
     def get_vector(self, query: list):
+        """
+        Returns a vector for the given query using the vectorizer method that is used to init the FAQEngine class.
+        """
         return self.vectorizer.transform(query)
 
     def build_model(self):
@@ -22,6 +25,7 @@ class FAQEngine:
         self.vectorizer = TfidfVectorizer(stop_words='english').fit(documents)
         self.vectors = self.vectorizer.transform(documents)
 
+    # TODO:
     def preprocess_data(self):
         pass
 
@@ -42,12 +46,11 @@ class FAQEngine:
 
         return df
 
-    # TODO:
-
     def get_cosine_similarity(self, query: list):
         return cosine_similarity(
             self.get_vector(query), self.vectors).flatten()
 
+    # TODO:
     def distance_similarity(self):
         pass
 
