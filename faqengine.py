@@ -55,5 +55,6 @@ class FAQEngine:
         query = [query]
         cosine_similarities = self.get_cosine_similarity(query)
         related_document_indices = cosine_similarities.argsort()[:-n:-1]
-        print(self.vectors.shape)
-        return self.data[self.data.index.isin(related_document_indices.tolist())]
+        return self.data[
+            self.data.index.isin(related_document_indices.tolist())
+        ].reset_index(drop=True).to_dict(orient='records')
