@@ -59,7 +59,7 @@ All the examples are available in `example` directory
 
 ## React Client
 
-![FAQ Engine - React Client](screenshots/react_client_faq_engine.png)
+![FAQ NLP Engine - React Client](screenshots/react_client_faq_engine.png?raw=true "FAQ NLP Engine")
 
 React Client code example is provided in `example/react-example`.
 
